@@ -1,0 +1,82 @@
+{
+  "name": "@dash-ui/design-system",
+  "version": "0.1.0",
+  "description": "A design system starter pack for @dash-ui",
+  "main": "index.js",
+  "bin": {
+    "create-design-system": "bin/index.js"
+  },
+  "repository": "https://github.com/dash-ui/design-system",
+  "homepage": "https://github.com/dash-ui/design-system#readme",
+  "author": "Jared Lunde <jared.lunde@gmail.com> (https://jaredLunde.com)",
+  "license": "MIT",
+  "files": [
+    "index.js",
+    "/lib",
+    "/bin"
+  ],
+  "scripts": {
+    "format": "prettier --write \"{,!(node_modules|dist|coverage)/**/}*.{ts,tsx,js,jsx,md,yml,json}\"",
+    "lint": "eslint . --ext .js,.ts,.tsx",
+    "prepublishOnly": "cli-confirm \"Did you run 'yarn release' first? (y/N)\"",
+    "prerelease": "npm run format && npm run lint",
+    "release": "git add . && standard-version -a"
+  },
+  "husky": {
+    "hooks": {
+      "pre-commit": "lundle check-types && lint-staged",
+      "commit-msg": "commitlint -E HUSKY_GIT_PARAMS"
+    }
+  },
+  "lint-staged": {
+    "**/*.{ts,tsx,js,jsx}": [
+      "eslint --fix",
+      "prettier --write"
+    ],
+    "**/*.{md,yml,json}": [
+      "prettier --write"
+    ]
+  },
+  "commitlint": {
+    "extends": [
+      "@commitlint/config-conventional"
+    ]
+  },
+  "config": {
+    "commitizen": {
+      "path": "./node_modules/cz-conventional-changelog"
+    }
+  },
+  "eslintConfig": {
+    "extends": [
+      "lunde"
+    ]
+  },
+  "eslintIgnore": [
+    "node_modules",
+    "/lib",
+    "/types"
+  ],
+  "prettier": {
+    "semi": false,
+    "singleQuote": true,
+    "jsxSingleQuote": true,
+    "bracketSpacing": false
+  },
+  "devDependencies": {
+    "@commitlint/cli": "^9.1.1",
+    "@commitlint/config-conventional": "^9.1.1",
+    "cli-confirm": "^1.0.1",
+    "cz-conventional-changelog": "^3.2.0",
+    "eslint": "^7.6.0",
+    "eslint-config-lunde": "^0.3.0",
+    "husky": "^4.2.5",
+    "lint-staged": "^10.2.11",
+    "prettier": "^2.0.5",
+    "standard-version": "^8.0.2"
+  },
+  "dependencies": {
+    "@inst-cli/template-utils": "^1.0.7",
+    "@lunde/inst-utils": "^1.0.7"
+  }
+}
