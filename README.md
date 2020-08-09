@@ -61,7 +61,7 @@ The design system comes with a variety of build tools that allow you to release 
 
 ## Usage
 
-#### `create-design-system <name> [--user] [--org] [--scope]`
+#### `create-design-system <name> [--user=githubUsername] [--org=githubOrg] [--scope=npmOrg]`
 
 | Argument | Type     | Required | Description                                                                                                     |
 | -------- | -------- | -------- | --------------------------------------------------------------------------------------------------------------- |
