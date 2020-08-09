@@ -32,7 +32,7 @@ export interface DesignSystemProps {
   /**
    * A `styles()` instance
    */
-  styles: Styles
+  styles?: Styles
   children: React.ReactNode
 }
 
