@@ -26,8 +26,6 @@ yarn storybook
 
 ## What's in the box?
 
-### Features
-
 - [x] **UI component starter pack** Alerts, badges, buttons, checkboxes, switches,
       and spinners, inputs, textareas, and icons.
 - [x] **Layout components** exported from [`@dash-ui/react-layout`](https://github.com/dash-ui/react-layout):
