@@ -65,13 +65,13 @@ The design system comes with a variety of build tools that allow you to release 
 
 #### `create-design-system <name> [--user=githubUsername] [--org=githubOrg] [--scope=npmOrg] [--no-git]`
 
-| Argument | Type     | Required | Description                                                                                                     |
-| -------- | -------- | -------- | --------------------------------------------------------------------------------------------------------------- |
-| name     | `string` | Yes      | The name of the package you're creating. This is also the name of the directory the package will be created in. |
-| user     | `string` | No       | Your GitHub username                                                                                            |
-| org      | `string` | No       | A GitHub organization name where the repo should live                                                           |
-| scope    | `string` | No       | An npm organization                                                                                             |
-| no-git   | `string` | No       | Create the package without initializing a `git` repo                                                            |
+| Argument | Type      | Required | Description                                                                                                     |
+| -------- | --------- | -------- | --------------------------------------------------------------------------------------------------------------- |
+| name     | `string`  | Yes      | The name of the package you're creating. This is also the name of the directory the package will be created in. |
+| user     | `string`  | No       | Your GitHub username                                                                                            |
+| org      | `string`  | No       | A GitHub organization name where the repo should live                                                           |
+| scope    | `string`  | No       | An npm organization                                                                                             |
+| no-git   | `boolean` | No       | Create the package without initializing a `git` repo                                                            |
 
 ## LICENSE
 
