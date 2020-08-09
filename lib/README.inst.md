@@ -31,10 +31,16 @@ npm i <:packageName:>
 ## Quick start
 
 ```js
-import {Text} from '<:packageName:>'
+import {DesignSystem, Text} from '<:packageName:>'
 
 export function App() {
-  return <Text variant='heading'>Hello world</Text>
+  return (
+    // This is a context provider for the design system. It also injects the
+    // necessary global styles.
+    <DesignSystem>
+      <Text variant='heading'>Hello world</Text>
+    </DesignSystem>
+  )
 }
 ```
 
