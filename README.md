@@ -1,105 +1,68 @@
-# @lunde/create-react-pkg
+<hr/>
+<br/>
+<img src='https://github.com/dash-ui/styles/raw/master/assets/logo.png'/>
 
-This is an [`inst`](https://github.com/jaredLunde/inst-pkg) template for creating
-React packages with or without TypeScript.
+> A command line tool for creating design systems with [Dash](https://github.com/dash-ui) and [Storybook](https://github.com/storybookjs)
 
-## 📦 What's in the \*\*\*\*ing box?
+```sh
+# Using npx
+npx @dash-ui/design-system my-design-system
 
-Packages are created with a variety of build tools that make your life easier
+# Using a global install
+yarn global add @dash-ui/design-system
+create-design-system my-design-system
+
+cd my-design-system
+yarn storybook
+```
+
+## What's in the box?
+
+### Features
+
+- [x] **UI component starter pack** Alerts, badges, buttons, checkboxes, switches,
+      and spinners, inputs, textareas, and icons.
+- [x] **Layout components** exported from [`@dash-ui/react-layout`](https://github.com/dash-ui/react-layout):
+      Box, Grid, Row, Column, and more!
+- [x] [**Tailwind**](https://tailwindcss.com/) design tokens
+- [x] **Beautiful typography** out of the box
+- [x] **Responsive props and styles** from [`@dash-ui/responsive`](https://github.com/dash-ui/responsive)
+- [x] **Modern CSS reset**
+- [x] **Accessibility**
+- [x] **Auto-documentation** with [Storybook](https://github.com/storybookjs)
+- [x] **Semantic versioning**
+- [x] **Strongly typed** with TypeScript
+- [x] **Modern build system** automatically generates ESM, UMD, CJS, modules, and types based
+      upon the `"exports"` field in the package.json
 
 ### Build tools
 
-| Library    | Description                                            |
-| ---------- | ------------------------------------------------------ |
-| Babel 7    | For compiling jsx and ES6 code to ES5                  |
-| Jest       | For testing components                                 |
-| Prettier   | For formatting code, READMEs, and configs              |
-| ESLint     | For linting the application                            |
-| Yarn       | For deterministic builds and monorepos                 |
-| Travis CI  | (Optional) For continuous integration                  |
-| TypeScript | (Optional) For adding type definitions to your package |
+The design system comes with a variety of build tools that allow you to release with confidence
 
-## 🔧 Usage
+| Tool                                                                           | Description                                                                                                                      |
+| ------------------------------------------------------------------------------ | -------------------------------------------------------------------------------------------------------------------------------- |
+| React                                                                          | This starter pack is built in React                                                                                              |
+| TypeScript                                                                     | Your design system should have strong types and autocomplete                                                                     |
+| Storybook                                                                      | Write your documentation as you code and build bulletproof UI components                                                         |
+| Yarn                                                                           | Because I said so                                                                                                                |
+| Jest + [@testing-library](https://github.com/testing-library)                  | For testing components and hooks                                                                                                 |
+| Prettier                                                                       | For formatting code, READMEs, and configs                                                                                        |
+| ESLint                                                                         | For linting the design system                                                                                                    |
+| [Standard Version](https://github.com/conventional-changelog/standard-version) | Semantic releases made easy                                                                                                      |
+| [Commitlint](https://github.com/conventional-changelog/commitlint)             | Lints your commit messages                                                                                                       |
+| Lundle                                                                         | A build tool that automatically generates UMD, ESM, CJS, modules, and types based upon the `"exports"` field in the package.json |
+| Travis CI                                                                      | (Optional) For continuous integration                                                                                            |
 
-```shell script
-# Use `npx`
-npx @lunde/create-react-pkg my-pkg
+## Usage
 
-# Or install it globally
-yarn global add @lunde/create-react-pkg
-create-react-pkg my-pkg --ts
-```
+#### `create-design-system <name> [--user] [--org] [--scope]`
 
-## Arguments
-
-#### `create-react-pkg <name> [--ts]`
-
-| Argument | Type      | Required | Description                                                                                                     |
-| -------- | --------- | -------- | --------------------------------------------------------------------------------------------------------------- |
-| name     | `string`  | `true`   | The name of the package you're creating. This is also the name of the directory the package will be created in. |
-| --ts     | `boolean` | `false`  | Creates a TypeScript package                                                                                    |
-
-## 📜 Package scripts
-
-### `build`
-
-Builds types (if `--ts`), commonjs, and ECMAScript distributions
-
-### `build-main`
-
-Builds the commonjs distribution
-
-### `build-module`
-
-Builds the ECMAScript distribution
-
-### `format`
-
-Formats `src` and `dist` directories with prettier as defined by `.prettierrc`
-
-### `lint`
-
-Runs `eslint` on the package source
-
-### `prepublishOnly`
-
-Runs before the package is published. This calls `lint`, `build`, `test`, and `format` scripts
-
-### `test`
-
-Tests the package with `jest` as defined by options in `package.json -> jest`
-
-### `validate`
-
-Runs `check-types` (if `--ts`), `lint`, `test`, and `format` scripts
-
-## 🚨 TypeScript-specific scripts
-
-### `build-types`
-
-Builds the TypeScript type definitions
-
-### `check-types`
-
-Runs a type check on the project using the local `tsconfig.json`
-
-## 🐺 Husky hooks
-
-### `pre-commit`
-
-Runs `lint-staged` and the `build-types` script
-
-## 💨 Lint staged
-
-Used for calling commands on git staged files that match a glob pattern
-
-### `**/*.{ts,tsx,js,jsx}`
-
-Calls `eslint` and `prettier --write` to lint and format the staged files
-
-### `**/*.{md,yml,json,eslintrc,prettierrc}`
-
-Calls `prettier --write` to format the staged files
+| Argument | Type     | Required | Description                                                                                                     |
+| -------- | -------- | -------- | --------------------------------------------------------------------------------------------------------------- |
+| name     | `string` | Yes      | The name of the package you're creating. This is also the name of the directory the package will be created in. |
+| user     | `string` | No       | Your GitHub username                                                                                            |
+| org      | `string` | No       | A GitHub organization name where the repo should live                                                           |
+| scope    | `string` | No       | An npm organization                                                                                             |
 
 ## LICENSE
 
