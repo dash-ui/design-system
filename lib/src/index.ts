@@ -44,5 +44,3 @@ export type {
   RowProps,
   ResponsiveLazyProp,
 } from '@dash-ui/react-layout'
-export {default as forwardRefAs} from 'forward-ref-as'
-export type {AsProp} from 'forward-ref-as'
